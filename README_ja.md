@@ -1,4 +1,4 @@
-# ellipse_analysis
+# bimanual-ellipticity-index — 両手協調課題における楕円化指数（OI）計算パイプライン
 
 ペンタブレットで記録した両手協調課題データから楕円化指数（OI）を計算するPythonパイプライン。
 
