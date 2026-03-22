@@ -29,7 +29,7 @@ OI is computed via **PCA** on each detected cycle's trajectory:
 - `sd_minor` = standard deviation along the second principal component
 - `OI = sd_minor / sd_major`
 
-PCA is rotation-invariant, so no axis-alignment correction is needed. For near-circular cycles (flatness ≥ 0.85), a Q-vector method is used to resolve axis ambiguity.
+PCA is rotation-invariant, so no axis-alignment correction is needed. For near-circular cycles (flatness ≥ 0.85), axis ambiguity is resolved by computing the midpoint of the start and end points, then determining which principal axis it aligns with more closely.
 
 Cycles are automatically detected, quality-filtered (ellipse fitting residual, closure check), and aggregated per participant per condition.
 
