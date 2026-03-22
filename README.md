@@ -94,10 +94,10 @@ Key parameters in `main.py`. Values below are defaults tuned for a 24-subject da
 
 ## Research Context
 
-This pipeline was developed as part of a study on how **visually-induced sense of body ownership affects bimanual coordination** (n=24, within-subjects design, 4 VR conditions). Key results:
+This pipeline was developed and validated using data from a study on how **visually-induced sense of body ownership affects bimanual coordination** (n=24, within-subjects design, 4 conditions). Key results from that study:
 
-- Disownership score correlated significantly with OI change in the line-drawing hand (r = 0.43, p = 0.03)
 - Bimanual coupling was observed in both hands across all conditions (p < 0.01 vs. unimanual baseline)
+- A significant correlation between disownership score and bimanual coupling change was observed under one condition (r = 0.43, p = 0.03)
 
 ## License
 
