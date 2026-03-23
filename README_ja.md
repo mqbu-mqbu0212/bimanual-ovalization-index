@@ -116,9 +116,9 @@ output/
 
 tailが閾円に入り脱出後も前半軌跡からr未満の距離を保つ場合、tail内の始点最近傍点でtrimする。以下のbefore/afterペアはtrimによるOIの変化（0.7892 → 0.8417）を示す。
 
-| trim前 | trim後 |
-|:------:|:------:|
-| ![trim前後](images/fig6_trim.png) ||
+| trim前/後 |
+|:------:|
+| ![trim前後](images/fig6_trim.png) |
 
 ## 既知の制限
 
