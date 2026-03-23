@@ -87,6 +87,24 @@ Key parameters in `main.py`. Values below are defaults tuned for a 24-subject da
 
 > **Note**: `closure_radius` and `residual_threshold` were derived from the original dataset. When applying to new data, recalculate these from your own distribution.
 
+## Examples
+
+The following figures show representative cycles from the pipeline's filtering stages.
+Images use anonymised data.
+
+### Kept cycles
+
+| Circle hand | Line hand |
+|:-----------:|:---------:|
+| ![Circle hand — kept](images/fig1_circle_kept.png) | ![Line hand — kept](images/fig2_line_kept.png) |
+
+### Removed cycles
+
+| Closure failure | Missing samples | High residual |
+|:---------------:|:---------------:|:-------------:|
+| ![Closure removed](images/fig3_closure_removed.png) | ![Missing removed](images/fig4_missing_removed.png) | ![Residual removed](images/fig5_residual_removed.png) |
+| Tail (orange) never entered the closure circle | 10 consecutive missing samples exceeded threshold (6) | Ellipse fit RMS=0.1795 exceeded threshold 0.172 |
+
 ## Known Limitations
 
 - Coordinate bounds (`x_min` etc.) are hardcoded for a specific tablet — generalisation requires reconfiguration
