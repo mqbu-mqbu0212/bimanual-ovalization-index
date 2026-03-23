@@ -97,11 +97,13 @@ output/
 以下の図はパイプラインのフィルタリング処理の各段階を示す代表的なサイクル。
 画像は匿名化されたデータを使用。
 
-### 保持されたサイクル
+<div align="center">
 
 | 円手 | 線手 |
 |:----:|:----:|
-| ![円手 — kept](images/fig1_circle_kept.png) | ![線手 — kept](images/fig2_line_kept.png) |
+| <img src="images/fig1_circle_kept.png" height="400"> | <img src="images/fig2_line_kept.png" height="500"> |
+
+</div>
 
 ### 除外されたサイクル
 
