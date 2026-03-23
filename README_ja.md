@@ -83,6 +83,24 @@ output/
 
 > **注意**: `closure_radius` と `residual_threshold` は元のデータセットから算出した値。他データへ適用する場合は自分のデータの分布から再計算すること。
 
+## 処理例
+
+以下の図はパイプラインのフィルタリング処理の各段階を示す代表的なサイクル。
+画像は匿名化されたデータを使用。
+
+### 保持されたサイクル
+
+| 円手 | 線手 |
+|:----:|:----:|
+| ![円手 — kept](images/fig1_circle_kept.png) | ![線手 — kept](images/fig2_line_kept.png) |
+
+### 除外されたサイクル
+
+| クロージャ除外 | 欠損サンプル除外 | 残差除外 |
+|:--------------:|:---------------:|:--------:|
+| ![Closure removed](images/fig3_closure_removed.png) | ![Missing removed](images/fig4_missing_removed.png) | ![Residual removed](images/fig5_residual_removed.png) |
+| tail（オレンジ）が閾円に未到達 | 連続欠損10点が閾値（6）を超過 | フィッティング残差RMS=0.1795が閾値0.172を超過 |
+
 ## 既知の制限
 
 - 座標境界（`x_min` 等）は特定のタブレットにハードコードされている——汎用化には要再設定
