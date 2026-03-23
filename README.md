@@ -33,6 +33,15 @@ PCA is rotation-invariant, so no axis-alignment correction is needed. For near-c
 
 Cycles are detected by projecting the trajectory onto its PCA major axis and identifying turnaround points. Each detected cycle is then quality-filtered (ellipse fitting residual check and closure check) before being used in OI calculation. Results are aggregated per participant per condition.
 
+The closure check verifies that the trajectory returns near its starting point. The tail (latter half of the cycle) is examined against a closure circle centred on the start point. The following outcomes are possible:
+
+- **no_entry**: the tail never enters the closure circle → cycle removed
+- **escape**: the tail enters the circle, exits, and then stays at a distance ≥ r from the front half of the trajectory for `closure_escape_n` consecutive points → cycle removed
+- **trim**: the tail enters the circle, exits, but remains within distance r of the front half trajectory → trimmed at the point in the tail closest to the start
+- **pass**: the tail enters the circle and does not exit → kept as-is
+
+Trimming affects OI: in example data, trim changed OI from 0.7892 to 0.8417.
+
 ## Installation
 
 ```bash
@@ -105,10 +114,20 @@ Images use anonymised data.
 | ![Closure removed](images/fig3_closure_removed.png) | ![Missing removed](images/fig4_missing_removed.png) | ![Residual removed](images/fig5_residual_removed.png) |
 | Tail (orange) never entered the closure circle | 10 consecutive missing samples exceeded threshold (6) | Ellipse fit RMS=0.1795 exceeded threshold 0.172 |
 
+### Closure trim
+
+When the tail enters the closure circle, exits, but remains within distance r of the front half trajectory, the cycle is trimmed at the point in the tail closest to the start. The before/after pair below shows the effect on the computed OI (0.7892 → 0.8417).
+
+| Before trim | After trim |
+|:-----------:|:----------:|
+| ![Before and after trim](images/fig6_trim.png) ||
+
 ## Known Limitations
 
 - Coordinate bounds (`x_min` etc.) are hardcoded for a specific tablet — generalisation requires reconfiguration
 - Participants who naturally draw landscape-oriented ellipses (major axis horizontal) will show attenuated OI values under the PCA-based method; a y-axis-based OI option is planned for a future version
+- Overlap that stays within the closure circle is not trimmed (classified as **pass**). Trim accuracy therefore depends on the closure circle size, and may be insufficient as a general quality guarantee
+- The escape condition (removal when the tail stays far from the front half for `closure_escape_n` consecutive points) has not triggered in any circle-hand data in the original dataset, and is not meaningful for the line hand. Its practical effect on data quality is uncertain
 
 ## Research Context
 
