@@ -99,9 +99,13 @@ output/
 
 ### 保持されたサイクル
 
+<div align="center">
+
 | 円手 | 線手 |
 |:----:|:----:|
-| ![円手 — kept](images/fig1_circle_kept.png) | ![線手 — kept](images/fig2_line_kept.png) |
+| <img src="images/fig1_circle_kept.png" height="350" alt="円手 — kept"> | <img src="images/fig2_line_kept.png" height="450" alt="線手 — kept"> |
+
+</div>
 
 ### 除外されたサイクル
 
