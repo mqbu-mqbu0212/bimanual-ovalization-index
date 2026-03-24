@@ -8,6 +8,31 @@ A Python pipeline for computing the Ellipticity Index (OI) from bimanual coordin
 **Solution:** A fully automated pipeline with PCA-based OI calculation, geometry-based cycle filtering, and unified configuration.  
 **Result:** Reproducible OI values with explicit, adjustable parameters — applicable to both hands across any bimanual coordination dataset.
 
+---
+
+## Key Features
+
+- PCA-based OI calculation (rotation-invariant, no axis correction needed)
+- Automatic cycle detection via PCA major-axis projection
+- Geometry-based filtering (ellipse fitting residual + closure check)
+- Automatic trim of excess tail trajectories
+- Config-based parameter management for reproducibility
+- Per-cycle visualisation output with removal logs
+- ~5,000 cycles (24 subjects × 10 conditions) processed in ~1 hour
+
+---
+
+## Conventional vs This Approach
+
+| | Conventional | This approach |
+|---|---|---|
+| Axis definition / OI | Ellipse fitting-based. Works well for elliptical trajectories, but unstable for line-like trajectories — making unified processing across both hands difficult | PCA-based. Applicable consistently to ellipses, lines, and everything in between |
+| Cycle detection | Y-axis peak-based. When trajectories are tilted, detected boundaries deviate from actual turnaround points | PCA major-axis projection-based. Since the projection velocity approaches zero near the actual turnaround point — where inter-point distances are smallest — more accurate cycle boundaries are expected regardless of drawing angle |
+| Quality control | Visual inspection with subjective exclusion | Quantitative exclusion via ellipse fitting residual and closure check |
+| Configuration | Scattered, difficult to reproduce | Consolidated in a single config |
+
+---
+
 ## Background
 
 In bimanual coordination research, participants are asked to simultaneously draw a circle with one hand and a straight line with the other. Due to the **bimanual coupling effect**, both trajectories become distorted: the circle-drawing hand's trajectory becomes more elliptical (elongated toward a line), and the line-drawing hand's trajectory curves toward an ellipse.
