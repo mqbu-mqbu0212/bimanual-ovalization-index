@@ -8,7 +8,7 @@ A Python pipeline for computing the Ellipticity Index (OI) from bimanual coordin
 
 In bimanual coordination research, participants are asked to simultaneously draw a circle with one hand and a straight line with the other. Due to the **bimanual coupling effect**, both trajectories become distorted: the circle-drawing hand's trajectory becomes more elliptical (elongated toward a line), and the line-drawing hand's trajectory curves toward an ellipse.
 
-TThe **Ellipticity Index** (OI) quantifies how elliptical a trajectory is, ranging from 0 (perfect line) to 1 (perfect circle). In bimanual coupling analysis, changes in OI for both hands are used to measure the degree of coupling.
+The **Ellipticity Index** (OI) quantifies how elliptical a trajectory is, ranging from 0 (perfect line) to 1 (perfect circle). In bimanual coupling analysis, changes in OI for both hands are used to measure the degree of coupling.
 
 ### Motivation
 
@@ -29,9 +29,9 @@ OI is computed via **PCA** on each detected cycle's trajectory:
 - `sd_minor` = standard deviation along the second principal component
 - `OI = sd_minor / sd_major`
 
-PCA is rotation-invariant, so no axis-alignment correction is needed. For near-circular cycles (flatness ≥ 0.85), axis ambiguity is resolved by computing the midpoint of the start and end points, then determining which principal axis it aligns with more closely.For near-circular cycles where the Q-vector method is used, axis assignment can occasionally result in OI > 1.0. By default (`clip_oi_to_one=True`), these values are clipped to 1.0. Set `clip_oi_to_one=False` to retain them as-is.
+PCA is rotation-invariant, so no axis-alignment correction is needed. For near-circular cycles (flatness ≥ 0.85), the two principal axes become nearly equal in length, making it difficult to determine which is the major axis. In these cases, axis ambiguity is resolved by computing the midpoint of the start and end points (Q), then assigning the axis that aligns more closely with Q as the major axis. Depending on the axis assignment, this can occasionally result in OI > 1.0. By default (`clip_oi_to_one=True`), these values are clipped to 1.0. Set `clip_oi_to_one=False` to retain them as-is.
 
-Cycles are detected by projecting the trajectory onto its PCA major axis and identifying turnaround points. Each detected cycle is then quality-filtered (ellipse fitting residual check and closure check) before being used in OI calculation. Results are aggregated per participant per condition.
+For cycle detection, PCA is first applied to the entire trajectory of one trial to determine the principal axis direction. Turnaround points are then identified by detecting sign changes in the projection onto this axis, splitting the trajectory into individual cycles. Each detected cycle is then quality-filtered (ellipse fitting residual check and closure check) before being used in OI calculation. Results are aggregated per participant per condition.
 
 The closure check verifies that the trajectory returns near its starting point. The tail (latter half of the cycle) is examined against a closure circle centred on the start point. The following outcomes are possible:
 
