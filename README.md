@@ -9,6 +9,7 @@
 **Solution:** A fully automated pipeline with PCA-based OI calculation, geometry-based cycle filtering, and unified configuration.
 
 **Result:** Reproducible OI values with per-cycle quality control and explicit, adjustable parameters — applicable to both hands across any bimanual coordination dataset.
+
 ---
 
 ## Key Features
