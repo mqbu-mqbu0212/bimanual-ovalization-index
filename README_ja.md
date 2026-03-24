@@ -151,7 +151,9 @@ output/
 
 人間が手で描く軌跡ではサイクルごとに中心座標がずれるのを避けられず、tail部分はこのずれの過程を含むことが多い。余分なtailが含まれると軌跡全体の重心がずれ、PCAで求めるsd_majorとsd_minorの比が本来の楕円形状を反映しなくなる。trimすることで意図した楕円部分のみの分布に基づいたOIが得られる。以下はtrim前後の例（OI: 0.7892 → 0.8417）。
 
-![trim前後](images/fig6_trim.png)
+<div align="center">
+<img src="images/fig6_trim.png" height="400" alt="trim前後">
+</div>
 
 ## 既知の制限
 
