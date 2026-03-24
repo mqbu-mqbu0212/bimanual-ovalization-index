@@ -109,10 +109,14 @@ output/
 
 ### 除外されたサイクル
 
+<div align="center">
+
 | クロージャ除外 | 欠損サンプル除外 | 残差除外 |
 |:--------------:|:---------------:|:--------:|
 | ![Closure removed](images/fig3_closure_removed.png) | ![Missing removed](images/fig4_missing_removed.png) | ![Residual removed](images/fig5_residual_removed.png) |
 | tail（オレンジ）が閾円に未到達 | 連続欠損10点が閾値（6）を超過 | フィッティング残差RMS=0.1795が閾値0.172を超過 |
+
+</div>
 
 ### クロージャtrim
 
