@@ -2,12 +2,13 @@
 
 # bimanual-ellipticity-index — OI Calculator for Bimanual Coordination Research
 
-A Python pipeline for computing the Ellipticity Index (OI) from bimanual coordination task data recorded on a pen tablet.
+> Redesigned an ad-hoc, manual ellipticity index pipeline into a reproducible, fully automated system
 
-**Problem:** OI computation methods are inconsistent across studies, and the code I had been using in my own research relied on manual steps and ambiguous axis definitions.  
-**Solution:** A fully automated pipeline with PCA-based OI calculation, geometry-based cycle filtering, and unified configuration.  
-**Result:** Reproducible OI values with explicit, adjustable parameters — applicable to both hands across any bimanual coordination dataset.
+**Problem:** OI computation methods are inconsistent across studies, and the code I had been using in my own research relied on manual steps and ambiguous axis definitions.
 
+**Solution:** A fully automated pipeline with PCA-based OI calculation, geometry-based cycle filtering, and unified configuration.
+
+**Result:** Reproducible OI values with per-cycle quality control and explicit, adjustable parameters — applicable to both hands across any bimanual coordination dataset.
 ---
 
 ## Key Features
