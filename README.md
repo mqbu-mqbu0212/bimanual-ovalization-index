@@ -113,10 +113,14 @@ Images use anonymised data.
 
 ### Removed cycles
 
+<div align="center">
+
 | Closure failure | Missing samples | High residual |
 |:---------------:|:---------------:|:-------------:|
 | ![Closure removed](images/fig3_closure_removed.png) | ![Missing removed](images/fig4_missing_removed.png) | ![Residual removed](images/fig5_residual_removed.png) |
 | Tail (orange) never entered the closure circle | 10 consecutive missing samples exceeded threshold (6) | Ellipse fit RMS=0.1795 exceeded threshold 0.172 |
+
+</div>
 
 ### Closure trim
 
