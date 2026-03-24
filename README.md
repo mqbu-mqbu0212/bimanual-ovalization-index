@@ -157,7 +157,9 @@ Images use anonymised data.
 
 Since human-drawn trajectories inevitably drift between cycles, the tail portion often represents this drift rather than the intended ellipse shape. Including excess tail shifts the centroid of the trajectory, which in turn alters the sd_major and sd_minor derived from PCA — causing OI to deviate from the value that reflects the intended ellipse shape. Trimming ensures OI is computed from the intended portion of the trajectory only. The figure below shows a before/after example (OI: 0.7892 → 0.8417).
 
-![Before and after trim](images/fig6_trim.png)
+<div align="center">
+<img src="images/fig6_trim.png" height="400" alt="Before and after trim">
+</div>
 
 ## Known Limitations
 
