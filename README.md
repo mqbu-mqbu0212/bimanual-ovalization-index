@@ -21,6 +21,7 @@
 - Config-based parameter management for reproducibility
 - Per-cycle visualisation output with removal logs
 - ~5,000 cycles (24 subjects × 10 conditions) processed in ~1 hour
+- Recursive CSV collection from input directory (any folder structure or depth)
 
 ---
 
@@ -95,6 +96,8 @@ python main.py --input <input_path> --output <output_dir>
 CSV files with 3 columns: `time, y, x` (no header). `START`/`END` marker rows are automatically removed. Missing samples (pen-off, recorded as `0,0`) are handled via interpolation.
 
 Filename format: `<subject_id>_<condition>.csv` (e.g. `A_CDL.csv`)
+
+The folder structure is unrestricted. All CSV files under the input directory are collected regardless of nesting depth or structure. Files can be organised by subject, by condition, or placed flat — the pipeline handles all cases. Subject ID and condition are determined solely from the filename, not the folder name. If the filename contains no `_`, the subject ID will be set to `unknown`.
 
 ### Output
 
