@@ -93,7 +93,7 @@ python main.py --input <input_path> --output <output_dir>
 
 ### Input format
 
-CSV files with 3 columns: `time, y, x` (no header). `START`/`END` marker rows are automatically removed. Missing samples (pen-off, recorded as `0,0`) are handled via interpolation.
+CSV files with 2 columns (`y, x`) or 3 columns (`time, y, x`), no header. If 2 columns are provided, a sequential time index is generated automatically. Any row where the y or x column contains a non-numeric value (e.g. `START`/`END` markers, or any other string) is automatically removed. Pen-off samples (`0,0` or NaN) are treated as missing: leading/trailing pen-off rows are removed, and gaps in the middle are interpolated.
 
 Filename format: `<subject_id>_<condition>.csv` (e.g. `A_CDL.csv`)
 
