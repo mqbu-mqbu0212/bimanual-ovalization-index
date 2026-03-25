@@ -2,7 +2,7 @@
 
 # bimanual-ovalization-index — OI Calculator for Bimanual Coordination Research
 
-> Redesigned an ad-hoc, manual ellipticity index pipeline into a reproducible, fully automated system
+> Redesigned an ad-hoc, manual ovalization index pipeline into a reproducible, fully automated system
 
 **Problem:** OI computation methods are inconsistent across studies, and the code I had been using in my own research relied on manual steps and ambiguous axis definitions.
 
@@ -40,7 +40,7 @@
 
 In bimanual coordination research, participants are asked to simultaneously draw a circle with one hand and a straight line with the other. Due to the **bimanual coupling effect**, both trajectories become distorted: the circle-drawing hand's trajectory becomes more elliptical (elongated toward a line), and the line-drawing hand's trajectory curves toward an ellipse.
 
-The **Ellipticity Index** (OI) quantifies how elliptical a trajectory is, ranging from 0 (perfect line) to 1 (perfect circle). In bimanual coupling analysis, changes in OI for both hands are used to measure the degree of coupling.
+The **Ovalization Index** (OI) quantifies how elliptical a trajectory is, ranging from 0 (perfect line) to 1 (perfect circle). In bimanual coupling analysis, changes in OI for both hands are used to measure the degree of coupling.
 
 ### Motivation
 
